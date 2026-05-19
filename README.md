@@ -453,9 +453,6 @@ Contributions are welcome! Please:
 3. Commit changes with clear messages
 4. Submit a pull request
 
-## License
-
-This project is open source and available under the MIT License.
 
 ## Citation
 
@@ -465,7 +462,7 @@ If you use this project in research, please cite:
 @software{skin_disease_detection,
   author = {Your Name},
   title = {AI-Based Skin Disease Detection System},
-  year = {2024},
+  year = {2026},
   url = {https://github.com/username/repo}
 }
 ```
@@ -488,14 +485,4 @@ For issues, questions, or contributions:
 - **Frontend**: HTML5, CSS3, JavaScript (Vanilla)
 - **API**: RESTful Flask API with CORS support
 
-## Acknowledgments
-
-- HAM10000 dataset creators (ISIC Archive)
-- TensorFlow and Keras teams
-- Open-source community for amazing libraries
-
 ---
-
-**Last Updated**: February 2024
-**Version**: 1.0.0
-**Status**: Production Ready (Educational Use)
