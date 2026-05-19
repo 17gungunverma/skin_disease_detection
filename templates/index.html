@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Based Skin Disease Detection System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <h1 class="navbar-title"> Skin Disease Detection</h1>
+            <p class="navbar-subtitle">AI-Powered Dermatalogical Diagnosis System</p>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Info Section -->
+        <section class="info-section">
+            <h2>System Information</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Models Used</h3>
+                    <ul>
+                        <li>Custom CNN</li>
+                        <li>MobileNetV2</li>
+                        <li>EfficientNet</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>Disease Classes</h3>
+                    <ul id="disease-list"></ul>
+                </div>
+                <div class="info-card">
+                    <h3>Model Status</h3>
+                    <div id="model-status">Loading...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upload Section -->
+        <section class="upload-section">
+            <h2>Upload Skin Lesion Image</h2>
+            <div class="upload-container">
+                <div class="upload-area" id="uploadArea">
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <p class="upload-text">Drag and drop your image here</p>
+                    <p class="upload-subtext">or click to select</p>
+                    <input type="file" id="fileInput" accept="image/*" hidden>
+                </div>
+                <button id="predictBtn" class="btn btn-primary" disabled>Analyze Image</button>
+            </div>
+        </section>
+
+        <!-- Preview Section -->
+        <section id="previewSection" class="preview-section hidden">
+            <h2>Image Preview</h2>
+            <div class="preview-container">
+                <img id="previewImage" src="" alt="Preview">
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="resultsSection" class="results-section hidden">
+            <h2>Analysis Results</h2>
+            
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="predictions">Predictions</button>
+                <button class="tab-btn" data-tab="comparison">Model Comparison</button>
+                <button class="tab-btn" data-tab="details">Detailed Analysis</button>
+            </div>
+
+            <!-- Predictions Tab -->
+            <div id="predictions" class="tab-content active">
+                <div id="predictionsContainer" class="predictions-grid"></div>
+            </div>
+
+            <!-- Comparison Tab -->
+            <div id="comparison" class="tab-content">
+                <div id="comparisonContainer" class="comparison-container"></div>
+            </div>
+
+            <!-- Details Tab -->
+            <div id="details" class="tab-content">
+                <div id="detailsContainer" class="details-container"></div>
+            </div>
+        </section>
+
+        <!-- Loading Section -->
+        <section id="loadingSection" class="loading-section hidden">
+            <div class="loading-spinner"></div>
+            <p>Analyzing image with AI models...</p>
+        </section>
+
+        <!-- Error Section -->
+        <section id="errorSection" class="error-section hidden">
+            <div class="error-message" id="errorMessage"></div>
+            <button class="btn btn-secondary" onclick="clearError()">Dismiss</button>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy;2026 AI-Based Skin Disease Detection System. </p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
