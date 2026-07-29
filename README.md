@@ -4,7 +4,7 @@ A production-ready web application for detecting skin diseases using deep learni
 
 ## Features
 
-- **Multiple AI Models**: Compares three deep learning architectures:
+- **Multiple AI Models**: Compares three deep learning architectures models:
   - Custom CNN (built from scratch)
   - MobileNetV2 (transfer learning)
   - EfficientNet (transfer learning)
